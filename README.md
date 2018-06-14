@@ -8,7 +8,6 @@ In this assignment, You'll create a Trivia game using JavaScript for the logic a
 
 ### Option One: Basic Quiz (Timed Form)
 
-![Basic](Images/1-basic.jpg)
 
 **[Click Here to Watch the Demo](basic-trivia-demo.mov)**.
 
@@ -24,7 +23,6 @@ In this assignment, You'll create a Trivia game using JavaScript for the logic a
 
 ### Option Two: Advanced Assignment (Timed Questions)
 
-![Advanced](Images/2-advanced.jpg)
 
 **[Click Here to Watch the demo](advanced-trivia-demo.mov)**.
 
