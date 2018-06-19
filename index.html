@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Trivial Game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div>
+                    <h1 class="title">Totally Trivial Trivial!!</h1>
+                    <h2 class="title"> Click Start To Play </h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="showTimeLeft"></div>
+
+
+        <div>
+            <button id="startButton" type="button" class="btn btn-lg btn-primary">Start</button>
+        </div>
+
+      
+
+
+
+      <div class="hide" id ="showQuestionList">
+            <div id="question1" class="row">
+                <p>Q1: How tall is Klay Thompson?</p>
+                <form>
+                    <input name = "Q1" value="true" type="radio" data="201 cm">201 cm</input>
+                    <input name = "Q1" value="false" type="radio" data="220 cm">220 cm</input>
+                    <input name = "Q1" value="false" type="radio" data="660 cm">660 cm</input>
+                    <input name = "Q1" value="false" type="radio" data="650 cm">650 cm</input>
+                    <input name = "Q1" value="false" type="radio" data="190 cm">190 cm</input>
+                </form>
+            </div>
+            <br>
+            <div id="question2" class="row">
+                    <p>Q2: who won the Final MAP?</p>
+                    <form>
+                            <input name = "Q2" value="false" type="radio" data="Kevin Love">Kevin Love</input>
+                            <input name = "Q2" value="false" type="radio" data="Kevin Wei">Kevin Wei</input>
+                            <input name = "Q2" value="true" type="radio" data="Kevin Durant">Kevin Durant</input>
+                            <input name = "Q2" value="false" type="radio" data="Kevin Hart">Kevin Hart</input>
+                            <input name = "Q2" value="false" type="radio" data="Kevin Kinney">Kevin Kinney</input>
+                    </form>
+            </div>
+             <br>
+            <div id="question3" class="row">
+                    <p>Q3: which team won championship this year and last year?</p>
+                    <form>
+                            <input name = "Q3" value="true" type="radio" data="Gold State Warriors">Gold State Warriors</input>
+                            <input name = "Q3" value="false" type="radio" data="Cleveland Cavaliers">Cleveland Cavaliers</input>
+                            <input name = "Q3" value="false" type="radio" data="Houston Rockets">Houston Rockets</input>
+                            <input name = "Q3" value="false" type="radio" data="Atlanta Hawks">Atlanta Hawks</input>
+                    </form>
+            </div>
+             <br>
+            <div id="question4" class="row">
+                    <p>Q4: How many games did Golden State Warriors win in final this year?</p>
+                    <form>
+                            <input name = "Q4" value="false" type="radio" data="7 games">7 games</input>
+                            <input name = "Q4" value="true" type="radio" data="4 games">4 games</input>
+                            <input name = "Q4" value="false" type="radio" data="5 games">5 games</input>
+                            <input name = "Q4" value="false" type="radio" data="11 games">11 games</input>
+                            <input name = "Q4" value="false" type="radio" data="3 games">3 games</input>
+                    </form>
+            </div>
+        </div>
+
+
+
+
+    <div id="over"></div>
+
+</div>
+
+
+
+
+
+
+    <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
