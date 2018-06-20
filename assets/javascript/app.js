@@ -1,4 +1,3 @@
-
 // var questionObject = {
 //     questionList: [
 //       {
@@ -34,67 +33,135 @@
 //   };
 
 
-  var totalTime = 6; 
-  var correctAns=0;
-  var wrongAns=0;
-  var unanswered = 0; 
-  var timer; 
+var totalTime = 10;
+var correctAns = 0;
+var wrongAns = 0;
+var unanswered = 0;
+var timer;
+var doneGame;
 
 
-     
-      function countdown() {
-   
-       if (totalTime <= 0) {
+
+function countdown() {
+
+    if (totalTime === 0) {
         // alert("Time Up!");
-         clearInterval(timer);
-         clearTimeout(timer);
+        clearInterval(timer);
+        clearTimeout(timer);
 
-       }else{
+    } else {
         totalTime = totalTime - 1;
-         $("#showTimeLeft").html("<h1>Time Remaining: " + totalTime + " Seconds");
-      
-
-       }
-    };
+        $("#showTimeLeft").html("<h1>Time Remaining: " + totalTime + " Seconds");
+    }
+};
 
 
 
 
 
 
-    $('#startButton').on("click", function(){
+$('#startButton').on("click", function () {
 
-
-        $('#startButton').addClass("hide");
-        $('h2').addClass("hide");
-        $("#showQuestionList").removeClass("hide");
-
-        var newButton = $("<button>");
-        $("#over").append(newButton.text("Done"));
-        
-        timer = setInterval(countdown,1000);
-
-         setTimeout(timeup, 1000*6);
+    timer = setInterval(countdown, 1000);
+    setTimeout(timeup, 1000 * 10);
 
 
 
+    $('#startButton').addClass("hide");
+    $('h2').addClass("hide");
+    $("#showQuestionList").removeClass("hide");
 
-    });
+    var newButton = $("<button>");
+    
 
-
-    function timeup(){
-
-        $("#showTimeLeft").html("All Done");
-        $("#showQuestionList").html("Correct Answer: " + correctAns + "<br>" + "Incorrect Answer: " + wrongAns +"<br>" + "Unanswered: " + unanswered );
-        $("#over").addClass("hide");
-
-      
-     
-        
+    doneGame = newButton.text("Done").attr("id","doneGame2");
+   $("#over").append(doneGame);
 
 
 
-        
+   $("#doneGame2").on("click", function(){
+
+    clearInterval(timer);
+    clearTimeout(timer);
+    timeup();
+
+   });
+
+
+    
+
+
+    //  $('input[name=radio使用的name的值]:checked').val()
+
+    
+
+
+
+
+});
+
+
+function timeup() {
+
+
+    if ($('input[name=Q1]:checked', '#question1').data('val') == "201cm") {
+        console.log($('input[name=Q1]:checked', '#question1').data('val') + " right");
+        correctAns++;
+    } else if($('input[name=Q1]:checked', '#question1').data('val') == null){
+        unanswered++;
+    }
+    else {
+        wrongAns++
+        console.log($('input[name=Q1]:checked', '#question1').data('val') + " wrong");
     }
 
 
+    if ($('input[name=Q2]:checked', '#question2').data('val') == "Kevin Durant") {
+        console.log($('input[name=Q2]:checked', '#question2').data('val') + " right");
+        correctAns++;
+    } else if($('input[name=Q2]:checked', '#question2').data('val') == null ){
+        unanswered++;
+    }
+    else {
+        wrongAns++
+        console.log($('input[name=Q2]:checked', '#question2').data('val') + " wrong");
+    }
+
+
+
+    if ($('input[name=Q3]:checked', '#question3').data('val') == "Gold State Warriors") {
+        console.log($('input[name=Q3]:checked', '#question3').data('val') + " right");
+        correctAns++;
+    } else if($('input[name=Q3]:checked', '#question3').data('val') == null ){
+        unanswered++;
+    }
+    else {
+        wrongAns++
+        console.log($('input[name=Q3]:checked', '#question3').data('val') + " wrong");
+    }
+
+
+
+    if ($('input[name=Q4]:checked', '#question4').data('val') == "4 games") {
+        console.log($('input[name=Q4]:checked', '#question4').data('val') + " right");
+        correctAns++;
+    } else if($('input[name=Q4]:checked', '#question4').data('val') == null){
+        unanswered++; 
+    }
+    else {
+        wrongAns++
+        console.log($('input[name=Q4]:checked', '#question4').data('val') + " wrong");
+    }
+
+
+
+
+
+
+   
+
+    $("#showTimeLeft").html("All Done");
+    $("#showQuestionList").html("Correct Answer: " + correctAns + "<br>" + "Incorrect Answer: " + wrongAns + "<br>" + "Unanswered: " + unanswered);
+    $("#over").addClass("hide");
+
+}
