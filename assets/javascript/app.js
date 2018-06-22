@@ -39,6 +39,7 @@ var wrongAns = 0;
 var unanswered = 0;
 var timer;
 var doneGame;
+var game;
 
 
 
@@ -47,7 +48,7 @@ function countdown() {
     if (totalTime === 0) {
         // alert("Time Up!");
         clearInterval(timer);
-        clearTimeout(timer);
+        clearTimeout(game);
 
     } else {
         totalTime = totalTime - 1;
@@ -63,7 +64,7 @@ function countdown() {
 $('#startButton').on("click", function () {
 
     timer = setInterval(countdown, 1000);
-    setTimeout(timeup, 1000 * 10);
+    game = setTimeout(timeup, 1000 * 10);
 
 
 
@@ -82,7 +83,7 @@ $('#startButton').on("click", function () {
    $("#doneGame2").on("click", function(){
 
     clearInterval(timer);
-    clearTimeout(timer);
+    clearTimeout(game);
     timeup();
 
    });
@@ -99,6 +100,14 @@ $('#startButton').on("click", function () {
 
 
 });
+
+// function aaa(){
+
+//     alert($('input[name=Q1]:checked').val());
+
+//     return false;
+
+// }
 
 
 function timeup() {
@@ -152,10 +161,6 @@ function timeup() {
         wrongAns++
         console.log($('input[name=Q4]:checked', '#question4').data('val') + " wrong");
     }
-
-
-
-
 
 
    
